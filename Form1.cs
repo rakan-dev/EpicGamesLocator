@@ -80,6 +80,10 @@ namespace EpicGamesLocator
                 {
                     string newPath = fbd.SelectedPath;
                     GInfo.EditLocation(newPath, txtIndtallationPath.Tag as ManifestInfo);
+                    Process.Start(newPath);
+                    Process.Start(txtIndtallationPath.Text);
+                    MessageBox.Show("Move Game Files to new location then press ok","Final Step",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    GInfo.Save();
                 }
             }
         } // edit the installation path
@@ -96,7 +100,8 @@ namespace EpicGamesLocator
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            GInfo.Save();
+            
+            label2.Text = "Thanks For using me :D";
         }
     }
 }

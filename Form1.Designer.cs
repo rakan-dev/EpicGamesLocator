@@ -32,8 +32,6 @@
             this.grpBox = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.lblStatus = new System.Windows.Forms.Label();
             this.txtIndtallationPath = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lGames = new System.Windows.Forms.ListView();
@@ -60,8 +58,6 @@
             // 
             this.grpBox.Controls.Add(this.label2);
             this.grpBox.Controls.Add(this.btnSave);
-            this.grpBox.Controls.Add(this.progressBar1);
-            this.grpBox.Controls.Add(this.lblStatus);
             this.grpBox.Controls.Add(this.txtIndtallationPath);
             this.grpBox.Controls.Add(this.label1);
             this.grpBox.Controls.Add(this.lGames);
@@ -76,7 +72,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Miriam Libre", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(275, 294);
+            this.label2.Location = new System.Drawing.Point(301, 320);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(244, 24);
             this.label2.TabIndex = 9;
@@ -94,24 +90,6 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(275, 321);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(296, 23);
-            this.progressBar1.TabIndex = 7;
-            this.progressBar1.ParentChanged += new System.EventHandler(this.progressBar1_ParentChanged);
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.Font = new System.Drawing.Font("Miriam Libre", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(525, 294);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(46, 24);
-            this.lblStatus.TabIndex = 6;
-            this.lblStatus.Text = "0%";
-            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtIndtallationPath
             // 
@@ -208,9 +186,7 @@
         private System.Windows.Forms.Button btnGetGames;
         private System.Windows.Forms.TextBox txtIndtallationPath;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSave;
     }

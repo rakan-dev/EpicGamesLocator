@@ -29,7 +29,7 @@ namespace EpicGamesLocator
             path = @"C:\ProgramData\Epic\UnrealEngineLauncher\LauncherInstalled.dat";
             Lancher = JsonConvert.DeserializeObject<InstallationLancher>(File.ReadAllText(path));
         }
-        public void EditLocation( string desPath, ManifestInfo manifest)
+        public async void EditLocation( string desPath, ManifestInfo manifest)
         {
             string target = manifest.InstallLocation;
             //ManifestLocation, InstallLocation, and StagingLocation
