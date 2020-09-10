@@ -30,6 +30,8 @@
         {
             this.btnKillEpic = new System.Windows.Forms.Button();
             this.grpBox = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.lblStatus = new System.Windows.Forms.Label();
             this.txtIndtallationPath = new System.Windows.Forms.TextBox();
@@ -39,8 +41,6 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnGetGames = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.grpBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +59,7 @@
             // grpBox
             // 
             this.grpBox.Controls.Add(this.label2);
-            this.grpBox.Controls.Add(this.button2);
+            this.grpBox.Controls.Add(this.btnSave);
             this.grpBox.Controls.Add(this.progressBar1);
             this.grpBox.Controls.Add(this.lblStatus);
             this.grpBox.Controls.Add(this.txtIndtallationPath);
@@ -72,6 +72,28 @@
             this.grpBox.Size = new System.Drawing.Size(577, 350);
             this.grpBox.TabIndex = 1;
             this.grpBox.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Miriam Libre", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(275, 294);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(244, 24);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "......";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Enabled = false;
+            this.btnSave.Font = new System.Drawing.Font("Miriam Libre", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(346, 243);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(149, 27);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // progressBar1
             // 
@@ -158,27 +180,6 @@
             this.btnGetGames.UseVisualStyleBackColor = true;
             this.btnGetGames.Click += new System.EventHandler(this.btnGetGames_Click);
             // 
-            // button2
-            // 
-            this.button2.Enabled = false;
-            this.button2.Font = new System.Drawing.Font("Miriam Libre", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(346, 243);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(149, 27);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Miriam Libre", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(275, 294);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(244, 24);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "......";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -211,7 +212,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSave;
     }
 }
 

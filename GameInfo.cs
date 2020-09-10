@@ -29,8 +29,9 @@ namespace EpicGamesLocator
             path = @"C:\ProgramData\Epic\UnrealEngineLauncher\LauncherInstalled.dat";
             Lancher = JsonConvert.DeserializeObject<InstallationLancher>(File.ReadAllText(path));
         }
-        public void EditLocation(string target, string desPath, ManifestInfo manifest)
+        public void EditLocation( string desPath, ManifestInfo manifest)
         {
+            string target = manifest.InstallLocation;
             //ManifestLocation, InstallLocation, and StagingLocation
             foreach (ManifestInfo manifestInfo in Manifests)
             {
@@ -43,6 +44,7 @@ namespace EpicGamesLocator
 
                 }
             }
+
         }
          
         
@@ -60,7 +62,13 @@ namespace EpicGamesLocator
         }
         public void Save()
         {
-
+            File.Delete(@"C:\ProgramData\Epic\UnrealEngineLauncher\LauncherInstalled.dat");
+            File.WriteAllText(@"C:\ProgramData\Epic\UnrealEngineLauncher\LauncherInstalled.dat",JsonConvert.SerializeObject(Lancher));
+            foreach(ManifestInfo manifest in Manifests)
+            {
+                File.Delete(@"C:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests\" + manifest.InstallationGuid + ".item");
+                File.WriteAllText(@"C:\ProgramData\Epic\EpicGamesLauncher\Data\Manifests\" + manifest.InstallationGuid + ".item", JsonConvert.SerializeObject(manifest));
+            }
         }
     }
 }

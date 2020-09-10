@@ -1,4 +1,4 @@
-﻿using IOExtensions;
+﻿
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -20,7 +20,7 @@ namespace EpicGamesLocator
         {
             InitializeComponent();
         }
-
+        GamesInfo GInfo;
         private void Form1_Load(object sender, EventArgs e)
         {
             Process[] pname = Process.GetProcessesByName("EpicGamesLauncher");
@@ -33,6 +33,8 @@ namespace EpicGamesLocator
             {
                 btnKillEpic.Enabled = false;
                 grpBox.Enabled = true;
+                btnKillEpic.Text = "Epic Games Killed ! yah ";
+                GInfo = new GamesInfo();
             }
         } //check if epic running
 
@@ -51,16 +53,21 @@ namespace EpicGamesLocator
             btnKillEpic.Enabled = false;
             grpBox.Enabled = true;
             btnKillEpic.Text = "Epic Games Killed ! yah ";
+            GInfo = new GamesInfo();
         } // kill epic process
 
         private void btnGetGames_Click(object sender, EventArgs e)
         {
             lGames.Items.Clear();
+            lGames.Items.AddRange(GInfo.GetListViewItems());
         } // get games and put them in listview
 
         private void lGames_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            txtIndtallationPath.Text = (lGames.SelectedItems[0].Tag as ManifestInfo).InstallLocation;
+            txtIndtallationPath.Tag = lGames.SelectedItems[0].Tag;
+            btnEdit.Enabled = true;
+            btnSave.Enabled = true;
         } // show the current installation path after select the game
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -72,7 +79,7 @@ namespace EpicGamesLocator
                 if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
                 {
                     string newPath = fbd.SelectedPath;
-
+                    GInfo.EditLocation(newPath, txtIndtallationPath.Tag as ManifestInfo);
                 }
             }
         } // edit the installation path
@@ -85,6 +92,11 @@ namespace EpicGamesLocator
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            GInfo.Save();
         }
     }
 }
